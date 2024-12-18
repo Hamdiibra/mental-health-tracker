@@ -6,8 +6,19 @@ Base = declarative_base()
 
 # User Table
 class User(Base):
-    __tablename__ = 'users'  # Corrected here
+    __tablename__ = 'users'  
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False, unique=True)
     reflections = relationship('Reflection', back_populates='user')
     activities = relationship('Activity', back_populates='user')
+
+# Activity Table
+class Activity(Base):
+    __tablename__ = 'activities' 
+    id = Column(Integer,primary_key = True)
+    user_id = Column(Integer,ForeignKey('users.id'))
+    type = Column(String, nullable=False) #e.g Sleep, Exercise
+    duration = Column(Float) #Duration in hours
+    date = Column(Date) # Date of activity
+    user = relationship('User', back_populates='activities')
+    
