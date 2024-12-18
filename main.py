@@ -18,4 +18,31 @@ def main():
         else:
             print("Invalid choice. Please choose 1 or 2.")
 
-    
+    #Step 2: Main options menu(seamless experience)
+    while True:
+        print(f"\nHello, {user}! What would you like to do?")
+        print("1. Log Activity")
+        print("2. Log Reflection")
+        print("3. View summary")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ").strip()
+        if choice == "1":
+            log_activity(user)
+            print(f"\nHello, {user}! What else would you like to do?")
+        elif choice == "2":
+            log_activity(user)
+            print(f"\nHello, {user}! What else would you like to do?")
+        elif choice == "3":
+            view_summary(user)
+            print(f"\nHello, {user}! What else would you like to do?")
+        elif choice == "4":
+            print("Exiting... Goodbye")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+            
+
