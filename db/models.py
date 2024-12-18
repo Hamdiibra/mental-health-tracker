@@ -21,4 +21,13 @@ class Activity(Base):
     duration = Column(Float) #Duration in hours
     date = Column(Date) # Date of activity
     user = relationship('User', back_populates='activities')
-    
+
+# Reflection table
+class Reflection(Base):
+    __tablename__ = 'reflection'
+    id = Column(Integer,primary_key=True)
+    User_id = Column(Integer,ForeignKey('users.id'))
+    mood = Column(String,nullable=False)
+    notes = Column(String) # Optional notes
+    date = Column(Date) #Date of reflection
+    user = relationship('User', back_populates='reflections')
