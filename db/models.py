@@ -12,6 +12,9 @@ class User(Base):
     reflections = relationship('Reflection', back_populates='user')
     activities = relationship('Activity', back_populates='user')
 
+    def __repr__(self):
+        return f"User(name='{self.name}')"
+
 # Activity Table
 class Activity(Base):
     __tablename__ = 'activities' 
@@ -24,9 +27,9 @@ class Activity(Base):
 
 # Reflection table
 class Reflection(Base):
-    __tablename__ = 'reflection'
+    __tablename__ = 'reflections'
     id = Column(Integer,primary_key=True)
-    User_id = Column(Integer,ForeignKey('users.id'))
+    user_id = Column(Integer,ForeignKey('users.id'))
     mood = Column(String,nullable=False)
     notes = Column(String) # Optional notes
     date = Column(Date) #Date of reflection
