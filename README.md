@@ -2,7 +2,10 @@
 
 # Overview:
 
-The Mental Health Activity Tracker is a command-line interface (CLI) application that helps users track their daily activities, mood reflections, and generate summaries for better mental health awareness. Built using Python and SQLAlchemy, this project emphasizes database interaction, user-friendly interfaces, and structured data handling.
+The Mental Health Activity Tracker is a command-line interface (CLI) application that helps users 
+track their daily activities, mood reflections, and generate summaries for better mental health awareness.
+Built using Python and SQLAlchemy, this project emphasizes database interaction, user-friendly interfaces, 
+and structured data handling.
 
 # Features
 
